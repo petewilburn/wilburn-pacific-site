@@ -8,37 +8,49 @@ const services = [
     id: 1,
     title: "Crane Design & Engineering",
     description: "Custom design of CMAA-compliant bridge cranes, gantries, and monorails. PE-stamped drawings and FEA analysis included.",
-    icon: "crane" // Ensure your ServiceCard component can handle string icons, or map them here
+    icon: "crane",
+    category: "Design",
+    features: ["CMAA Compliant", "PE-Stamped Drawings", "FEA Analysis"]
   },
   {
     id: 2,
     title: "Controls & Automation",
     description: "Modernizing aging cranes with Variable Frequency Drives (VFDs), anti-sway technology, and wireless telemetry.",
-    icon: "cpu"
+    icon: "cpu",
+    category: "Modernization",
+    features: ["VFD Installation", "Anti-Sway Tech", "Wireless Telemetry"]
   },
   {
     id: 3,
     title: "Structural Fabrication",
     description: "Precision fabrication of runway beams and box girders. AWS D1.1 certified welding and NDT testing.",
-    icon: "hammer"
+    icon: "hammer",
+    category: "Fabrication",
+    features: ["AWS D1.1 Certified", "Precision Manufacturing", "NDT Testing"]
   },
   {
     id: 4,
     title: "Rigging & Field Services",
     description: "Installation of overhead systems, load testing (up to 125%), and runway alignment using laser surveys.",
-    icon: "truck"
+    icon: "truck",
+    category: "Installation",
+    features: ["Load Testing", "Laser Alignment", "Turnkey Installation"]
   },
   {
     id: 5,
     title: "Maintenance & Inspections",
     description: "OSHA 1910.179 periodic inspections and preventative maintenance programs to minimize downtime.",
-    icon: "clipboard"
+    icon: "clipboard",
+    category: "Maintenance",
+    features: ["OSHA Compliant", "Periodic Inspections", "Preventative Programs"]
   },
   {
     id: 6,
     title: "Emergency Repair",
     description: "24/7 breakdown support for critical production cranes. Structural and electrical troubleshooting.",
-    icon: "alert"
+    icon: "alert",
+    category: "Support",
+    features: ["24/7 Support", "Structural Repair", "Electrical Troubleshooting"]
   }
 ];
 
