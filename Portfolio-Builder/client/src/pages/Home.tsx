@@ -3,26 +3,32 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Link } from "wouter";
 import ServiceCard from "@/components/ServiceCard";
 import ProjectCard from "@/components/ProjectCard";
-import CraneArm from "@/components/CraneArm"; // Import the Crane Arm
+import CraneArm from "@/components/CraneArm"; 
 
-// --- STATIC DATA (Replaces Database) ---
+// --- FIXED STATIC DATA ---
 const services = [
   {
     id: 1,
     title: "Crane Design & Engineering",
+    category: "Engineering", // Added Missing Field
     description: "Custom design of CMAA-compliant bridge cranes, gantries, and monorails. PE-stamped drawings and FEA analysis included.",
+    features: ["CMAA Compliant", "PE Stamped", "FEA Analysis"], // Added Missing Field
     icon: "crane"
   },
   {
     id: 2,
     title: "Controls & Automation",
+    category: "Modernization", // Added Missing Field
     description: "Modernizing aging cranes with Variable Frequency Drives (VFDs), anti-sway technology, and wireless telemetry.",
+    features: ["VFD Upgrades", "PLC Integration", "Anti-Sway"], // Added Missing Field
     icon: "cpu"
   },
   {
     id: 3,
     title: "Structural Fabrication",
+    category: "Manufacturing", // Added Missing Field
     description: "Precision fabrication of runway beams and box girders. AWS D1.1 certified welding and NDT testing.",
+    features: ["AWS D1.1 Certified", "NDT Testing", "Custom Fab"], // Added Missing Field
     icon: "hammer"
   }
 ];
@@ -31,16 +37,28 @@ const projects = [
   {
     id: 1,
     title: "Riverport Crane Retrofit",
+    location: "Riverport, WA", // Added Missing Field
     category: "Modernization",
-    imageUrl: "https://placehold.co/800x600/1e293b/fbbf24?text=Riverport+Retrofit",
-    description: "Structural reinforcement and VFD upgrade for a 50-ton bridge crane."
+    imageUrl: "/images/crane-retrofit.jpg", // Pointing to local image (create this folder later)
+    description: "Structural reinforcement and VFD upgrade for a 50-ton bridge crane.",
+    // Added Missing Fields required by ProjectCard type
+    challenge: "Aging 50-ton bridge crane with fatigue cracks.", 
+    solution: "Reinforced girder and replaced controls with VFD.",
+    outcome: "Extended service life by 15 years.",
+    metrics: { "Capacity": "50 Ton" } 
   },
   {
     id: 2,
     title: "Mill #4 Custom Gantry",
+    location: "Inland Paper, OR", // Added Missing Field
     category: "Design & Fab",
-    imageUrl: "https://placehold.co/800x600/1e293b/38bdf8?text=Mill+%234+Gantry",
-    description: "Low-profile double-girder gantry designed for 18ft headroom."
+    imageUrl: "/images/mill-gantry.jpg",
+    description: "Low-profile double-girder gantry designed for 18ft headroom.",
+    // Added Missing Fields
+    challenge: "Low headroom clearance (18ft).",
+    solution: "Custom double-girder design with nested trolley.",
+    outcome: "Maximized hook height.",
+    metrics: { "Clearance": "6 in" }
   }
 ];
 
@@ -51,7 +69,6 @@ export default function Home() {
       <section className="relative h-screen flex items-center overflow-hidden bg-background blueprint-grid">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background pointer-events-none" />
         
-        {/* --- THE CRANE ARM COMPONENT --- */}
         <CraneArm /> 
 
         {/* Background Accent */}
@@ -144,25 +161,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-20 bg-primary text-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              { value: "35+", label: "Years Experience" },
-              { value: "1.2k", label: "Projects Completed" },
-              { value: "100%", label: "Safety Record" },
-              { value: "24/7", label: "Support Coverage" },
-            ].map((stat, i) => (
-              <div key={i} className="text-center">
-                <div className="text-4xl md:text-5xl font-mono font-bold mb-2">{stat.value}</div>
-                <div className="font-mono text-sm uppercase tracking-widest opacity-80">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Featured Projects */}
       <section className="py-24 bg-background relative blueprint-grid">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -179,49 +177,6 @@ export default function Home() {
             {projects.map((project, index) => (
                <ProjectCard key={project.id} project={project} index={index} />
             ))}
-          </div>
-        </div>
-      </section>
-      
-      {/* Why Choose Us Section Remains Unchanged Below... */}
-      <section className="py-24 bg-slate-900 border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-3xl font-mono font-bold text-white mb-6">Precision Engineering. <br/>Uncompromised Safety.</h2>
-              <p className="text-muted-foreground mb-8 leading-relaxed">
-                We understand the critical nature of heavy lifting equipment. Our team brings decades of specialized experience to every project, ensuring your systems are compliant, efficient, and reliable.
-              </p>
-              
-              <ul className="space-y-4">
-                {[
-                  "Licensed Professional Engineers (PE)",
-                  "Custom Fabrication & Installation",
-                  "Turnkey Project Management",
-                  "OSHA & ASME Compliance Experts"
-                ].map((item, i) => (
-                  <li key={i} className="flex items-center text-white font-mono text-sm">
-                    <CheckCircle2 className="w-5 h-5 text-secondary mr-3" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            
-            <div className="relative">
-              <div className="absolute inset-0 border-2 border-dashed border-white/10 rounded-sm translate-x-4 translate-y-4" />
-              <div className="relative bg-background p-8 rounded-sm border border-white/10 shadow-2xl">
-                 <div className="font-mono text-xs text-primary mb-4 uppercase tracking-widest border-b border-white/10 pb-2">Client Testimonial</div>
-                 <p className="text-xl text-white italic mb-6">"Wilburn Pacific's team diagnosed a structural issue our previous consultants missed. Their retrofit solution saved us over $500k in replacement costs."</p>
-                 <div className="flex items-center">
-                   <div className="w-10 h-10 bg-white/10 rounded-full mr-4 flex items-center justify-center font-bold text-white">MK</div>
-                   <div>
-                     <div className="text-white font-bold font-mono">Michael Kowalski</div>
-                     <div className="text-muted-foreground text-xs">Plant Manager, Titan Steel</div>
-                   </div>
-                 </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
