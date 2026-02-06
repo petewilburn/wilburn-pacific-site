@@ -10,7 +10,7 @@ import Services from "@/pages/Services";
 import Projects from "@/pages/Projects";
 import Contact from "@/pages/Contact";
 import NotFound from "@/pages/not-found";
-import { CraneArm } from "@/components/CraneArm";
+import CraneArm from "@/components/CraneArm";
 
 function Router() {
   return (
