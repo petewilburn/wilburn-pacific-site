@@ -5,3 +5,5 @@
     "@azure/communication-email": "^1.0.0"
   }
 }
+
+// Adding a comment to the host.json file to test if the file is being tracked correctly.
