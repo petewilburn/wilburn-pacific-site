@@ -38,11 +38,12 @@ export default function Contact() {
 
   return (
     <div className="pt-20 min-h-screen bg-background blueprint-grid">
+      {/* Header Section - LEFT ALIGNED FIX */}
       <section className="bg-card border-b border-white/10 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> {/* Removed text-center */}
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
             <h1 className="text-4xl md:text-5xl font-mono font-bold text-white mb-6">Contact Us</h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-2xl"> {/* Removed mx-auto */}
               Request a consultation for new projects or schedule service for existing equipment.
             </p>
           </motion.div>
