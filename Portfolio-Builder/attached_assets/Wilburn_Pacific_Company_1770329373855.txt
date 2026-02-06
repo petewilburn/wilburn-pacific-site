@@ -1,0 +1,126 @@
+Wilburn Pacific Company
+Precision Crane Engineering & Heavy Lift Systems
+
+Hero
+Headline: Engineered Lifting Solutions for the Pacific Northwest.
+Subheadline: We specialize in the design, structural analysis, and modernization of CMAA-compliant crane systems and heavy lifting equipment.
+Call to Action: Request an Engineering Consult
+
+Three core strengths
+1. PE-Stamped Engineering — Structural analysis, FEA modeling, and rated load cycle calculations by licensed Mechanical Engineers.
+2. Turnkey Modernization — Upgrading obsolete relay logic to modern VFD and PLC-based control systems.
+3. Critical Lift Safety — Comprehensive lift planning, rigging engineering, and below-the-hook design.
+
+Featured projects
+1. Riverport Crane Retrofit — Structural reinforcement and Class D duty cycle upgrade; extended service life by 15 years.
+2. Mill #4 Gantry System — Custom 20-ton gantry design for low-headroom clearance; integrated with automated material handling.
+3. Marine Jib Installation — Heavy-lift dockside jib crane with corrosion-resistant coating and wireless telemetry.
+
+Quick contact
+For engineering consults or site surveys: (509) 555-0123 or engineering@wilburnpacific.com.
+
+About
+Who we are
+Wilburn Pacific Company is an engineering-led industrial contractor specializing in overhead crane systems and heavy rigging. Unlike standard fabricators, we lead with mechanical engineering principles to solve complex load handling problems.
+
+Our mission
+To deliver lifting solutions that are structurally sound, operationally precise, and compliant with ASME B30 and CMAA 70 standards.
+
+History & milestones
+2008 — Founded to provide specialized structural fabrication.
+2014 — Expanded into heavy rigging and crane runway surveys.
+2019 — Established in-house engineering department for custom below-the-hook lifters.
+2023 — Awarded regional contract for port crane modernization.
+
+Leadership
+Principal Engineer: Pete Wilburn — Mechanical Engineer with 15+ years of experience in heavy machinery design and structural analysis.
+Operations Manager: Maria Lopez — Certified welding inspector and project manager specializing in critical path shutdowns.
+
+Certifications
+Professional Engineering (PE) Licensure
+AWS D1.1 / D14.1 Welding Certifications
+OSHA 1910.179 Compliance Specialists
+
+Services
+Overview
+We bridge the gap between theoretical engineering and practical fabrication. Every project begins with a structural assessment and ends with a load test.
+
+Service lines
+
+1. Crane Design & Engineering
+Description: Custom design of overhead bridge cranes, gantries, and monorails.
+Deliverables: PE-stamped drawings; Finite Element Analysis (FEA) reports; CMAA duty cycle classification.
+
+2. Controls & Automation
+Description: Modernizing aging cranes with Variable Frequency Drives (VFDs) and anti-sway technology.
+Deliverables: Electrical schematics; PLC programming; wireless remote integration.
+
+3. Structural Fabrication
+Description: Precision fabrication of runway beams, box girders, and end trucks.
+Deliverables: AWS D1.1 certified welds; non-destructive testing (NDT) reports.
+
+4. Rigging & Field Services
+Description: Installation of overhead systems, load testing, and runway alignment.
+Deliverables: Critical lift plans; laser alignment reports; load test certification.
+
+How we work
+1. Site Survey & Load Analysis — Laser measurement of runways and structural capacity checks.
+2. Engineering & Design — 3D modeling (SolidWorks/AutoCAD) and stress analysis.
+3. Fabrication & Controls — Precision manufacturing and control panel build.
+4. Installation & Commissioning — Safe erection followed by 125% rated load testing.
+
+Projects
+Case Study: Riverport Crane Retrofit
+Location: Riverport Industrial Park, WA
+Challenge: An aging 50-ton bridge crane suffered from fatigue cracks and obsolete contactor controls.
+Engineering Solution: Conducted FEA to identify stress concentrations. Installed cover plates to reinforce the girder and replaced controls with a Magnetek VFD system.
+Outcome: Zero safety incidents; improved positioning accuracy by 200%; extended crane life by 15 years.
+Photos: FEA stress map, control panel wiring, load testing.
+
+Case Study: Mill #4 Custom Gantry
+Location: Inland Paper Mill, OR
+Challenge: Client needed to lift 20-ton rolls in a facility with only 18 feet of headroom.
+Engineering Solution: Designed a custom low-profile double-girder gantry with a nested hoist trolley to maximize hook height.
+Outcome: Achieved required lift height with 6 inches of clearance; reduced load cycle time by 40%.
+Key Metrics: 1.5x safety factor on all structural members; L/600 deflection criteria met.
+
+Resources
+Downloads
+Crane Inspection Checklist (PDF) — Based on OSHA 1910.179 requirements.
+Runway Alignment Tolerance Guide (PDF) — Technical specifications for rail straightness and elevation.
+Company Capabilities Statement (PDF) — Full equipment list and engineering qualifications.
+
+FAQ
+Do you perform load testing? — Yes. We perform certified static and dynamic load tests up to 125% of rated capacity.
+Can you upgrade existing cranes? — Yes. We specialize in retrofitting older DC or contactor-controlled cranes with modern AC VFD systems.
+What design standards do you use? — All designs adhere to CMAA 70 (Specifications for Top Running Bridge & Gantry Type Multiple Girder Electric Overhead Traveling Cranes) and ASME B30 standards.
+
+Technical notes
+We utilize SolidWorks for 3D modeling and RISA-3D for structural analysis. All welding procedures comply with AWS D14.1 (Specification for Welding of Industrial and Mill Cranes).
+
+Contact
+Address: 120 Industrial Way, Walla Walla, WA 99362
+Phone: (509) 555-0123
+Email: engineering@wilburnpacific.com
+
+Contact form fields
+Name
+Company
+Email
+Project Details (Lift capacity, Span, Class)
+File Upload (Attach drawings/specs)
+
+Emergency Services
+For 24/7 breakdown support on critical production cranes, call (509) 555-0199.
+
+Legal
+Privacy policy (summary)
+We protect your proprietary engineering data and facility layouts. Non-Disclosure Agreements (NDAs) available upon request.
+Terms of use (summary)
+Engineering advice provided on this site is for general information. Specific applications require a signed engineering services agreement.
+
+SEO & Metadata
+Site title
+Wilburn Pacific — Industrial Crane Design & Structural Engineering
+Meta description
+Specializing in CMAA-compliant overhead cranes, structural analysis, and heavy rigging in the Pacific Northwest. PE-stamped engineering services available.

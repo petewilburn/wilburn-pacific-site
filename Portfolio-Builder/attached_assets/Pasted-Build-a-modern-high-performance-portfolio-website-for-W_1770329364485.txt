@@ -1,0 +1,29 @@
+Build a modern, high-performance portfolio website for "Wilburn Pacific Company," a specialized industrial crane design and engineering firm.
+
+**Tech Stack:**
+* Framework: Next.js (App Router)
+* Styling: Tailwind CSS
+* Animation: Framer Motion (for scroll animations and interactive elements)
+* Icons: Lucide React
+
+**Design Aesthetic:**
+* **Vibe:** "Precision Engineering" meets "Industrial Modern." Think dark mode (slate/charcoal backgrounds) with "Safety Yellow" or "Electric Blue" technical accents.
+* **Typography:** Technical and clean (e.g., Inter or JetBrains Mono for headers to give it a schematic feel).
+* **Layout:**
+    * **Hero:** A split screen or full-width section with a "technical drawing" or "wireframe" overlay animation on top of a crane photo. Text: "Precision Crane Engineering."
+    * **Features:** Use bento-box style grids to display services (Crane Design, Modernization, Rigging).
+    * **Interactive Elements:** When hovering over project cards, I want a "blueprint" effect or a subtle technical overlay to appear.
+
+**Page Structure & Content:**
+1.  **Navbar:** Logo (left), Links (Services, Projects, About, Contact), CTA Button ("Request Engineering Consult").
+2.  **Hero Section:** Headline: "Wilburn Pacific: Engineered Lifting Solutions." Sub: "Turnkey design, fabrication, and modernization for heavy industry."
+3.  **Services Section (3 Columns):**
+    * *Crane Design:* Custom bridge & gantry systems, CMAA compliant.
+    * *Controls & Modernization:* VFD upgrades, PLC automation.
+    * *Structural Analysis:* PE-stamped calculations, runway surveys.
+4.  **Featured Project (The Riverport Retrofit):** A dedicated section detailing a "50-Ton Bridge Crane Retrofit." Include stats like "Zero Safety Incidents" and "40% Downtime Reduction."
+5.  **Footer:** Simple technical footer with address (Walla Walla, WA), quick links, and a copyright.
+
+**Data Source:**
+Please use the following text content to populate the sections:
+[PASTE THE CONTENT FROM YOUR TEXT FILE HERE, BUT REPLACE THE GENERAL TERMS WITH THE CRANE-SPECIFIC TERMS LISTED ABOVE]
