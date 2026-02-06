@@ -51,15 +51,7 @@ export default function Footer() {
             <ul className="space-y-4 text-sm text-muted-foreground">
               <li className="flex items-start">
                 <MapPin className="w-5 h-5 text-primary mr-3 shrink-0" />
-                <span>1200 Industrial Way,<br />Portland, OR 97210</span>
-              </li>
-              <li className="flex items-center">
-                <Phone className="w-5 h-5 text-primary mr-3 shrink-0" />
-                <span>+1 (503) 555-0123</span>
-              </li>
-              <li className="flex items-center">
-                <Mail className="w-5 h-5 text-primary mr-3 shrink-0" />
-                <span>engineering@wilburn.com</span>
+                <span>Walla Walla, WA</span>
               </li>
             </ul>
           </div>

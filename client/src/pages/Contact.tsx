@@ -38,25 +38,29 @@ export default function Contact() {
 
   return (
     <div className="pt-20 min-h-screen bg-background blueprint-grid">
-      {/* Header Section - LEFT ALIGNED FIX */}
+      {/* Header Section */}
       <section className="bg-card border-b border-white/10 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> {/* Removed text-center */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
             <h1 className="text-4xl md:text-5xl font-mono font-bold text-white mb-6">Contact Us</h1>
-            <p className="text-xl text-muted-foreground max-w-2xl"> {/* Removed mx-auto */}
+            <p className="text-xl text-muted-foreground max-w-2xl">
               Request a consultation for new projects or schedule service for existing equipment.
             </p>
           </motion.div>
         </div>
       </section>
 
+      {/* Form Section */}
       <section className="py-16">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-card/50 backdrop-blur-sm border border-white/10 p-8 rounded-sm shadow-2xl">
+        {/* MATCHING CONTAINER WIDTH (max-w-7xl) so it aligns with header */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          {/* FORM CONTAINER: Constrained width, but NO mx-auto (Left Aligned) */}
+          <div className="max-w-2xl bg-card/50 backdrop-blur-sm border border-white/10 p-8 rounded-sm shadow-2xl">
             
             <form onSubmit={handleSubmit((data) => mutation.mutate(data))} className="space-y-8">
               
-              {/* === STANDARD FIELDS (Prominent at Top) === */}
+              {/* === STANDARD FIELDS === */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-sm font-mono uppercase text-muted-foreground">Name</label>
@@ -86,7 +90,7 @@ export default function Contact() {
                 {errors.message && <span className="text-red-500 text-xs">Required</span>}
               </div>
 
-              {/* === EMERGENCY SECTION (Tucked at Bottom) === */}
+              {/* === EMERGENCY SECTION (Bottom) === */}
               <div className="border-t border-white/10 pt-8 mt-8">
                 <div 
                   className={`p-4 border rounded-sm transition-all cursor-pointer flex items-center gap-4 ${
@@ -112,7 +116,6 @@ export default function Contact() {
                   </div>
                 </div>
 
-                {/* Conditional Fields */}
                 <AnimatePresence>
                   {isEmergency && (
                     <motion.div
@@ -151,7 +154,7 @@ export default function Contact() {
                 </AnimatePresence>
               </div>
 
-              {/* === SUBMIT BUTTON === */}
+              {/* === SUBMIT === */}
               <button 
                 disabled={mutation.isPending}
                 type="submit" 

@@ -1,34 +1,33 @@
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 import ServiceCard from "@/components/ServiceCard";
 import ProjectCard from "@/components/ProjectCard";
 import CraneArm from "@/components/CraneArm"; 
 
-// --- FIXED STATIC DATA ---
 const services = [
   {
     id: 1,
     title: "Crane Design & Engineering",
-    category: "Engineering", // Added Missing Field
+    category: "Engineering",
     description: "Custom design of CMAA-compliant bridge cranes, gantries, and monorails. PE-stamped drawings and FEA analysis included.",
-    features: ["CMAA Compliant", "PE Stamped", "FEA Analysis"], // Added Missing Field
+    features: ["CMAA Compliant", "PE Stamped", "FEA Analysis"],
     icon: "crane"
   },
   {
     id: 2,
     title: "Controls & Automation",
-    category: "Modernization", // Added Missing Field
+    category: "Modernization",
     description: "Modernizing aging cranes with Variable Frequency Drives (VFDs), anti-sway technology, and wireless telemetry.",
-    features: ["VFD Upgrades", "PLC Integration", "Anti-Sway"], // Added Missing Field
+    features: ["VFD Upgrades", "PLC Integration", "Anti-Sway"],
     icon: "cpu"
   },
   {
     id: 3,
     title: "Structural Fabrication",
-    category: "Manufacturing", // Added Missing Field
+    category: "Manufacturing",
     description: "Precision fabrication of runway beams and box girders. AWS D1.1 certified welding and NDT testing.",
-    features: ["AWS D1.1 Certified", "NDT Testing", "Custom Fab"], // Added Missing Field
+    features: ["AWS D1.1 Certified", "NDT Testing", "Custom Fab"],
     icon: "hammer"
   }
 ];
@@ -37,11 +36,10 @@ const projects = [
   {
     id: 1,
     title: "Riverport Crane Retrofit",
-    location: "Riverport, WA", // Added Missing Field
+    location: "Riverport, WA",
     category: "Modernization",
-    imageUrl: "/images/crane-retrofit.jpg", // Pointing to local image (create this folder later)
+    imageUrl: "/images/crane-retrofit.jpg",
     description: "Structural reinforcement and VFD upgrade for a 50-ton bridge crane.",
-    // Added Missing Fields required by ProjectCard type
     challenge: "Aging 50-ton bridge crane with fatigue cracks.", 
     solution: "Reinforced girder and replaced controls with VFD.",
     outcome: "Extended service life by 15 years.",
@@ -50,11 +48,10 @@ const projects = [
   {
     id: 2,
     title: "Mill #4 Custom Gantry",
-    location: "Inland Paper, OR", // Added Missing Field
+    location: "Inland Paper, OR",
     category: "Design & Fab",
     imageUrl: "/images/mill-gantry.jpg",
     description: "Low-profile double-girder gantry designed for 18ft headroom.",
-    // Added Missing Fields
     challenge: "Low headroom clearance (18ft).",
     solution: "Custom double-girder design with nested trolley.",
     outcome: "Maximized hook height.",
@@ -68,12 +65,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-screen flex items-center overflow-hidden bg-background blueprint-grid">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background pointer-events-none" />
-        
         <CraneArm /> 
-
-        {/* Background Accent */}
-        <div className="absolute top-1/4 right-0 w-1/3 h-1/3 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-1/4 h-1/4 bg-secondary/5 rounded-full blur-3xl" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="max-w-3xl">
@@ -128,16 +120,6 @@ export default function Home() {
             </motion.div>
           </div>
         </div>
-        
-        {/* Scroll Indicator */}
-        <motion.div 
-          animate={{ y: [0, 10, 0] }}
-          transition={{ repeat: Infinity, duration: 2 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/30"
-        >
-          <div className="w-[1px] h-16 bg-gradient-to-b from-transparent via-white/30 to-transparent mx-auto mb-2" />
-          <span className="text-[10px] font-mono uppercase tracking-widest writing-vertical">Scroll</span>
-        </motion.div>
       </section>
 
       {/* Services Section */}
@@ -148,11 +130,7 @@ export default function Home() {
               <h2 className="text-3xl md:text-4xl font-mono font-bold text-white mb-4">Core Capabilities</h2>
               <div className="h-1 w-20 bg-primary"></div>
             </div>
-            <p className="text-muted-foreground max-w-md mt-4 md:mt-0 font-mono text-sm">
-              Integrated engineering services designed to extend equipment life and improve safety.
-            </p>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
                <ServiceCard key={service.id} service={service} index={index} />
@@ -172,12 +150,28 @@ export default function Home() {
               </button>
             </Link>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projects.map((project, index) => (
                <ProjectCard key={project.id} project={project} index={index} />
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* NEW CALL TO ACTION (CTA) SECTION */}
+      <section className="py-24 bg-card border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-mono font-bold text-white mb-6">
+            Ready to Modernize Your Operations?
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
+            From emergency repairs to full-scale crane retrofits, we bring engineering precision to every lift.
+          </p>
+          <Link href="/contact">
+            <button className="bg-primary hover:bg-primary/90 text-background font-mono font-bold py-5 px-10 rounded-sm uppercase tracking-wide transition-all hover:scale-105 shadow-[0_0_30px_rgba(234,179,8,0.2)]">
+              Get a Quote Today
+            </button>
+          </Link>
         </div>
       </section>
     </div>
