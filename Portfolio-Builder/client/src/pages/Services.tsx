@@ -1,11 +1,48 @@
 import { motion } from "framer-motion";
-import { useServices } from "@/hooks/use-wilburn";
-import ServiceCard from "@/components/ServiceCard";
 import { FileText, Download } from "lucide-react";
+import ServiceCard from "@/components/ServiceCard";
+
+// Static Data to replace the Database Hook
+const services = [
+  {
+    id: 1,
+    title: "Crane Design & Engineering",
+    description: "Custom design of CMAA-compliant bridge cranes, gantries, and monorails. PE-stamped drawings and FEA analysis included.",
+    icon: "crane" // Ensure your ServiceCard component can handle string icons, or map them here
+  },
+  {
+    id: 2,
+    title: "Controls & Automation",
+    description: "Modernizing aging cranes with Variable Frequency Drives (VFDs), anti-sway technology, and wireless telemetry.",
+    icon: "cpu"
+  },
+  {
+    id: 3,
+    title: "Structural Fabrication",
+    description: "Precision fabrication of runway beams and box girders. AWS D1.1 certified welding and NDT testing.",
+    icon: "hammer"
+  },
+  {
+    id: 4,
+    title: "Rigging & Field Services",
+    description: "Installation of overhead systems, load testing (up to 125%), and runway alignment using laser surveys.",
+    icon: "truck"
+  },
+  {
+    id: 5,
+    title: "Maintenance & Inspections",
+    description: "OSHA 1910.179 periodic inspections and preventative maintenance programs to minimize downtime.",
+    icon: "clipboard"
+  },
+  {
+    id: 6,
+    title: "Emergency Repair",
+    description: "24/7 breakdown support for critical production cranes. Structural and electrical troubleshooting.",
+    icon: "alert"
+  }
+];
 
 export default function Services() {
-  const { data: services, isLoading } = useServices();
-
   return (
     <div className="pt-20 min-h-screen bg-background blueprint-grid">
       {/* Header */}
@@ -28,15 +65,9 @@ export default function Services() {
       <section className="py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {isLoading ? (
-               [1, 2, 3, 4, 5, 6].map((i) => (
-                 <div key={i} className="h-96 bg-white/5 animate-pulse rounded-sm border border-white/5" />
-               ))
-            ) : (
-              services?.map((service, index) => (
-                <ServiceCard key={service.id} service={service} index={index} />
-              ))
-            )}
+            {services.map((service, index) => (
+               <ServiceCard key={service.id} service={service} index={index} />
+            ))}
           </div>
         </div>
       </section>
