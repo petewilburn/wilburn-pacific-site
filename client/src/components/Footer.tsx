@@ -1,7 +1,23 @@
 import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter"; // <--- Import useLocation
 
 export default function Footer() {
+  const [location, setLocation] = useLocation(); // <--- Get current location
+
+  // Custom handler for Service links
+  const handleServiceClick = (slug: string) => {
+    if (location === "/services") {
+      // 1. If already on the page, just scroll (No URL change/Hash)
+      const element = document.getElementById(slug);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      // 2. If on another page, navigate there with the hash
+      setLocation(`/services#${slug}`);
+    }
+  };
+
   return (
     <footer className="bg-card border-t border-white/10 pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -28,17 +44,43 @@ export default function Footer() {
           <div>
             <h4 className="font-mono font-bold text-white mb-6 uppercase text-sm tracking-wider">Services</h4>
             <ul className="space-y-4 text-sm text-muted-foreground">
-              {/* Point to #automation for modernization/VFDs */}
-              <li><Link href="/services#automation" className="hover:text-primary transition-colors flex items-center group"><ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" /> Crane Modernization</Link></li>
-              
-              {/* Point to #engineering for structural design */}
-              <li><Link href="/services#engineering" className="hover:text-primary transition-colors flex items-center group"><ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" /> Structural Engineering</Link></li>
-              
-              {/* Point to #automation */}
-              <li><Link href="/services#automation" className="hover:text-primary transition-colors flex items-center group"><ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" /> Automation Controls</Link></li>
-              
-              {/* Point to #rigging */}
-              <li><Link href="/services#rigging" className="hover:text-primary transition-colors flex items-center group"><ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" /> Rigging Consulting</Link></li>
+              {/* REPLACED LINKS WITH CLICKABLE ITEMS */}
+              <li>
+                <button 
+                  onClick={() => handleServiceClick("automation")} 
+                  className="hover:text-primary transition-colors flex items-center group text-left"
+                >
+                  <ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" /> 
+                  Crane Modernization
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => handleServiceClick("engineering")} 
+                  className="hover:text-primary transition-colors flex items-center group text-left"
+                >
+                  <ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" /> 
+                  Structural Engineering
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => handleServiceClick("automation")} 
+                  className="hover:text-primary transition-colors flex items-center group text-left"
+                >
+                  <ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" /> 
+                  Automation Controls
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => handleServiceClick("rigging")} 
+                  className="hover:text-primary transition-colors flex items-center group text-left"
+                >
+                  <ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" /> 
+                  Rigging Consulting
+                </button>
+              </li>
             </ul>
           </div>
 
