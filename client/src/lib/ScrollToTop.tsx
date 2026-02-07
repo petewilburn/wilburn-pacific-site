@@ -12,15 +12,13 @@ export default function ScrollToTop() {
           const element = document.getElementById(id);
           if (element) {
             element.scrollIntoView({ behavior: "smooth" });
-            
-            // --- NEW: Remove the hash from URL after scrolling ---
-            // This keeps the URL clean (e.g., just "wilburnpacific.com/services")
+            // Remove hash to keep URL clean
             window.history.replaceState(null, "", window.location.pathname);
-            // -----------------------------------------------------
           }
         }, 100);
       } else {
-        window.scrollTo(0, 0);
+        // --- UPDATED: Smooth scroll to top on page change ---
+        window.scrollTo({ top: 0, behavior: "smooth" });
       }
     };
 

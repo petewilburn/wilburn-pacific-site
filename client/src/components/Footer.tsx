@@ -1,20 +1,27 @@
 import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
-import { Link, useLocation } from "wouter"; // <--- Import useLocation
+import { Link, useLocation } from "wouter";
 
 export default function Footer() {
-  const [location, setLocation] = useLocation(); // <--- Get current location
+  const [location, setLocation] = useLocation();
 
-  // Custom handler for Service links
+  // Handler for Service Section (Anchors)
   const handleServiceClick = (slug: string) => {
     if (location === "/services") {
-      // 1. If already on the page, just scroll (No URL change/Hash)
       const element = document.getElementById(slug);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
+      if (element) element.scrollIntoView({ behavior: "smooth" });
     } else {
-      // 2. If on another page, navigate there with the hash
       setLocation(`/services#${slug}`);
+    }
+  };
+
+  // --- NEW: Handler for Main Pages (About, Careers, etc.) ---
+  const handlePageClick = (path: string) => {
+    if (location === path) {
+      // If already on the page, smooth scroll to top
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      // If navigating, ScrollToTop.tsx will handle the smooth scroll
+      setLocation(path);
     }
   };
 
@@ -44,41 +51,24 @@ export default function Footer() {
           <div>
             <h4 className="font-mono font-bold text-white mb-6 uppercase text-sm tracking-wider">Services</h4>
             <ul className="space-y-4 text-sm text-muted-foreground">
-              {/* REPLACED LINKS WITH CLICKABLE ITEMS */}
               <li>
-                <button 
-                  onClick={() => handleServiceClick("automation")} 
-                  className="hover:text-primary transition-colors flex items-center group text-left"
-                >
-                  <ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" /> 
-                  Crane Modernization
+                <button onClick={() => handleServiceClick("automation")} className="hover:text-primary transition-colors flex items-center group text-left">
+                  <ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" /> Crane Modernization
                 </button>
               </li>
               <li>
-                <button 
-                  onClick={() => handleServiceClick("engineering")} 
-                  className="hover:text-primary transition-colors flex items-center group text-left"
-                >
-                  <ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" /> 
-                  Structural Engineering
+                <button onClick={() => handleServiceClick("engineering")} className="hover:text-primary transition-colors flex items-center group text-left">
+                  <ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" /> Structural Engineering
                 </button>
               </li>
               <li>
-                <button 
-                  onClick={() => handleServiceClick("automation")} 
-                  className="hover:text-primary transition-colors flex items-center group text-left"
-                >
-                  <ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" /> 
-                  Automation Controls
+                <button onClick={() => handleServiceClick("automation")} className="hover:text-primary transition-colors flex items-center group text-left">
+                  <ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" /> Automation Controls
                 </button>
               </li>
               <li>
-                <button 
-                  onClick={() => handleServiceClick("rigging")} 
-                  className="hover:text-primary transition-colors flex items-center group text-left"
-                >
-                  <ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" /> 
-                  Rigging Consulting
+                <button onClick={() => handleServiceClick("rigging")} className="hover:text-primary transition-colors flex items-center group text-left">
+                  <ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" /> Rigging Consulting
                 </button>
               </li>
             </ul>
@@ -87,10 +77,28 @@ export default function Footer() {
           <div>
             <h4 className="font-mono font-bold text-white mb-6 uppercase text-sm tracking-wider">Company</h4>
             <ul className="space-y-4 text-sm text-muted-foreground">
-              <li><Link href="/projects" className="hover:text-primary transition-colors">Projects</Link></li>
-              <li><Link href="/about" className="hover:text-primary transition-colors">About Us</Link></li>
-              <li><Link href="/careers" className="hover:text-primary transition-colors">Careers</Link></li>
-              <li><Link href="/contact" className="hover:text-primary transition-colors">Contact</Link></li>
+              {/* --- UPDATED LINKS TO USE CLICK HANDLER --- */}
+              <li>
+                <button onClick={() => handlePageClick("/projects")} className="hover:text-primary transition-colors text-left">
+                  Projects
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handlePageClick("/about")} className="hover:text-primary transition-colors text-left">
+                  About Us
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handlePageClick("/careers")} className="hover:text-primary transition-colors text-left">
+                  Careers
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handlePageClick("/contact")} className="hover:text-primary transition-colors text-left">
+                  Contact
+                </button>
+              </li>
+              {/* ------------------------------------------ */}
             </ul>
           </div>
 
