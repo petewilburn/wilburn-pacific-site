@@ -7,7 +7,6 @@ type ModalType = "privacy" | "terms" | "disclaimer" | null;
 export default function LegalFooterLinks() {
   const [activeModal, setActiveModal] = useState<ModalType>(null);
 
-  // Close modal when clicking backdrop
   const handleBackdropClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) setActiveModal(null);
   };
@@ -26,7 +25,9 @@ export default function LegalFooterLinks() {
             <strong>2. Use of Information:</strong> The information collected is used solely for the purpose of communicating with you regarding your project inquiries. We do not sell, trade, or rent your personal identification information to others.
           </p>
           <p>
-            <strong>3. Data Security:</strong> We implement appropriate data collection, storage, and processing practices and security measures to protect against unauthorized access to your personal information.
+            {/* --- UPDATED SECTION 3 --- */}
+            <strong>3. Data Security & Liability:</strong> We strive to implement commercially reasonable security measures to protect your personal information against unauthorized access. However, no method of transmission over the Internet or electronic storage is 100% secure. While we work to protect your data, we cannot guarantee its absolute security and shall not be held liable for any unauthorized access, hacking, or data breaches caused by third-party bad actors.
+            {/* ------------------------- */}
           </p>
         </div>
       ),
@@ -72,7 +73,6 @@ export default function LegalFooterLinks() {
 
   return (
     <>
-      {/* --- THE LINKS --- */}
       <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 mt-4 md:mt-0">
         <button 
           onClick={() => setActiveModal("privacy")} 
@@ -94,7 +94,6 @@ export default function LegalFooterLinks() {
         </button>
       </div>
 
-      {/* --- THE MODAL OVERLAY --- */}
       <AnimatePresence>
         {activeModal && (
           <motion.div
@@ -110,7 +109,6 @@ export default function LegalFooterLinks() {
               exit={{ scale: 0.95, opacity: 0 }}
               className="bg-[#0f172a] border border-white/10 w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-sm shadow-2xl relative"
             >
-              {/* Header */}
               <div className="sticky top-0 bg-[#0f172a] border-b border-white/10 p-6 flex items-center justify-between z-10">
                 <div className="flex items-center gap-3">
                   {modalContent[activeModal].icon}
@@ -121,18 +119,15 @@ export default function LegalFooterLinks() {
                 <button
                   onClick={() => setActiveModal(null)}
                   className="p-2 hover:bg-white/10 rounded-full transition-colors"
-                  aria-label="Close modal"
                 >
                   <X className="w-6 h-6 text-white" />
                 </button>
               </div>
 
-              {/* Body */}
               <div className="p-6 md:p-8">
                 {modalContent[activeModal].content}
               </div>
 
-              {/* Footer */}
               <div className="p-6 border-t border-white/10 bg-white/5 flex justify-end">
                 <button
                   onClick={() => setActiveModal(null)}
