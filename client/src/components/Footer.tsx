@@ -1,10 +1,10 @@
 import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 import { Link, useLocation } from "wouter";
+import LegalFooterLinks from "./LegalFooterLinks"; // <--- Import the new component
 
 export default function Footer() {
   const [location, setLocation] = useLocation();
 
-  // Handler for Service Section (Anchors)
   const handleServiceClick = (slug: string) => {
     if (location === "/services") {
       const element = document.getElementById(slug);
@@ -14,13 +14,10 @@ export default function Footer() {
     }
   };
 
-  // --- NEW: Handler for Main Pages (About, Careers, etc.) ---
   const handlePageClick = (path: string) => {
     if (location === path) {
-      // If already on the page, smooth scroll to top
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
-      // If navigating, ScrollToTop.tsx will handle the smooth scroll
       setLocation(path);
     }
   };
@@ -28,8 +25,12 @@ export default function Footer() {
   return (
     <footer className="bg-card border-t border-white/10 pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* ... (Keep the Grid Columns exactly as they were) ... */}
+        
+        {/* ... Column 1, 2, 3, 4 ... */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-          <div className="col-span-1 md:col-span-1">
+            {/* Column 1 */}
+            <div className="col-span-1 md:col-span-1">
             <Link href="/" className="flex items-center space-x-2 mb-6 group cursor-pointer">
               <img src="/logo.svg" alt="Wilburn Pacific" className="h-6 w-6 object-contain" />
               <span className="font-mono font-bold text-lg text-white">WILBURN PACIFIC</span>
@@ -77,7 +78,6 @@ export default function Footer() {
           <div>
             <h4 className="font-mono font-bold text-white mb-6 uppercase text-sm tracking-wider">Company</h4>
             <ul className="space-y-4 text-sm text-muted-foreground">
-              {/* --- UPDATED LINKS TO USE CLICK HANDLER --- */}
               <li>
                 <button onClick={() => handlePageClick("/projects")} className="hover:text-primary transition-colors text-left">
                   Projects
@@ -98,7 +98,6 @@ export default function Footer() {
                   Contact
                 </button>
               </li>
-              {/* ------------------------------------------ */}
             </ul>
           </div>
 
@@ -113,12 +112,13 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* --- BOTTOM ROW --- */}
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-muted-foreground font-mono">
           <p>© {new Date().getFullYear()} Wilburn Pacific Company. All rights reserved.</p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <span className="hover:text-white cursor-pointer">Privacy Policy</span>
-            <span className="hover:text-white cursor-pointer">Terms of Service</span>
-          </div>
+          
+          {/* REPLACED THE OLD LINKS WITH THE NEW COMPONENT */}
+          <LegalFooterLinks /> 
+          
         </div>
       </div>
     </footer>
