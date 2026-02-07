@@ -23,7 +23,7 @@ export default function Navbar() {
         <div className="flex justify-between h-20 items-center">
           <Link href="/" className="flex items-center space-x-3 group">
             <div className="h-12 w-auto flex items-center justify-center">
-              <img src="/logo.svg" alt="Wilburn Pacific" className="h-12 w-auto invert brightness-0" />
+              <img src="/logo.svg" alt="Wilburn Pacific" className="h-10 w-auto" />
             </div>
             <div className="flex flex-col">
               <span className="font-mono font-bold text-lg leading-none tracking-tighter text-primary">WILBURN</span>
