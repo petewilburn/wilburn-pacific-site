@@ -28,11 +28,17 @@ export default function Footer() {
           <div>
             <h4 className="font-mono font-bold text-white mb-6 uppercase text-sm tracking-wider">Services</h4>
             <ul className="space-y-4 text-sm text-muted-foreground">
-              {/* NOW POINTING TO /services */}
-              <li><Link href="/services" className="hover:text-primary transition-colors flex items-center group"><ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" /> Crane Modernization</Link></li>
-              <li><Link href="/services" className="hover:text-primary transition-colors flex items-center group"><ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" /> Structural Engineering</Link></li>
-              <li><Link href="/services" className="hover:text-primary transition-colors flex items-center group"><ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" /> Automation Controls</Link></li>
-              <li><Link href="/services" className="hover:text-primary transition-colors flex items-center group"><ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" /> Rigging Consulting</Link></li>
+              {/* Point to #automation for modernization/VFDs */}
+              <li><Link href="/services#automation" className="hover:text-primary transition-colors flex items-center group"><ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" /> Crane Modernization</Link></li>
+              
+              {/* Point to #engineering for structural design */}
+              <li><Link href="/services#engineering" className="hover:text-primary transition-colors flex items-center group"><ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" /> Structural Engineering</Link></li>
+              
+              {/* Point to #automation */}
+              <li><Link href="/services#automation" className="hover:text-primary transition-colors flex items-center group"><ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" /> Automation Controls</Link></li>
+              
+              {/* Point to #rigging */}
+              <li><Link href="/services#rigging" className="hover:text-primary transition-colors flex items-center group"><ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" /> Rigging Consulting</Link></li>
             </ul>
           </div>
 

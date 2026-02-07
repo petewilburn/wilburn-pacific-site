@@ -2,10 +2,11 @@ import { motion } from "framer-motion";
 import { FileText, Download } from "lucide-react";
 import ServiceCard from "@/components/ServiceCard";
 
-// Static Data to replace the Database Hook
+// Updated Data with 'slug' for navigation anchors
 const services = [
   {
     id: 1,
+    slug: "engineering", // Matches "Structural Engineering"
     title: "Crane Design & Engineering",
     description: "Custom design of CMAA-compliant bridge cranes, gantries, and monorails. PE-stamped drawings and FEA analysis included.",
     icon: "crane",
@@ -14,6 +15,7 @@ const services = [
   },
   {
     id: 2,
+    slug: "automation", // Matches "Crane Modernization" & "Automation"
     title: "Controls & Automation",
     description: "Modernizing aging cranes with Variable Frequency Drives (VFDs), anti-sway technology, and wireless telemetry.",
     icon: "cpu",
@@ -22,6 +24,7 @@ const services = [
   },
   {
     id: 3,
+    slug: "fabrication",
     title: "Structural Fabrication",
     description: "Precision fabrication of runway beams and box girders. AWS D1.1 certified welding and NDT testing.",
     icon: "hammer",
@@ -30,6 +33,7 @@ const services = [
   },
   {
     id: 4,
+    slug: "rigging", // Matches "Rigging Consulting"
     title: "Rigging & Field Services",
     description: "Installation of overhead systems, load testing (up to 125%), and runway alignment using laser surveys.",
     icon: "truck",
@@ -38,6 +42,7 @@ const services = [
   },
   {
     id: 5,
+    slug: "maintenance",
     title: "Maintenance & Inspections",
     description: "OSHA 1910.179 periodic inspections and preventative maintenance programs to minimize downtime.",
     icon: "clipboard",
@@ -46,6 +51,7 @@ const services = [
   },
   {
     id: 6,
+    slug: "support",
     title: "Emergency Repair",
     description: "24/7 breakdown support for critical production cranes. Structural and electrical troubleshooting.",
     icon: "alert",
@@ -78,7 +84,10 @@ export default function Services() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-               <ServiceCard key={service.id} service={service} index={index} />
+               // WRAPPER DIV: This holds the ID and the scroll margin
+               <div key={service.id} id={service.slug} className="scroll-mt-32">
+                  <ServiceCard service={service} index={index} />
+               </div>
             ))}
           </div>
         </div>

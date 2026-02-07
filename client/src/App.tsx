@@ -13,11 +13,13 @@ import NotFound from "@/pages/not-found";
 import CraneArm from "@/components/CraneArm";
 import About from "@/pages/About";
 import Careers from "@/pages/Careers";
+import ScrollToTop from "./lib/ScrollToTop";
 
 function Router() {
   return (
     <div className="flex flex-col min-h-screen relative">
       <CraneArm />
+      <ScrollToTop />
       <Navbar />
       <main className="flex-grow z-10">
         <Switch>
