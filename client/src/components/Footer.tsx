@@ -1,4 +1,4 @@
-import { Anchor, Mail, Phone, MapPin, ArrowRight } from "lucide-react";
+import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 
 export default function Footer() {
@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 md:col-span-1">
             <Link href="/" className="flex items-center space-x-2 mb-6 group cursor-pointer">
-              <Anchor className="h-6 w-6 text-primary" />
+              <img src="/logo.svg" alt="Wilburn Pacific" className="h-6 w-6 object-contain" />
               <span className="font-mono font-bold text-lg text-white">WILBURN PACIFIC</span>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6">
