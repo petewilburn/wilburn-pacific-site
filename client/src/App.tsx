@@ -11,6 +11,8 @@ import Projects from "@/pages/Projects";
 import Contact from "@/pages/Contact";
 import NotFound from "@/pages/not-found";
 import CraneArm from "@/components/CraneArm";
+import About from "@/pages/About";
+import Careers from "@/pages/Careers";
 
 function Router() {
   return (
@@ -23,6 +25,8 @@ function Router() {
           <Route path="/services" component={Services} />
           <Route path="/projects" component={Projects} />
           <Route path="/contact" component={Contact} />
+          <Route path="/about" component={About} />
+          <Route path="/careers" component={Careers} />
           <Route component={NotFound} />
         </Switch>
       </main>
