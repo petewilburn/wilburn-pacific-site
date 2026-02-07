@@ -16,7 +16,6 @@ export default function Footer() {
               Reliability built on decades of technical expertise.
             </p>
             <div className="flex space-x-4">
-              {/* Social placeholders */}
               <div className="w-8 h-8 rounded bg-white/5 hover:bg-primary hover:text-background transition-colors flex items-center justify-center cursor-pointer">
                 <span className="font-mono font-bold text-xs">LI</span>
               </div>
@@ -29,6 +28,7 @@ export default function Footer() {
           <div>
             <h4 className="font-mono font-bold text-white mb-6 uppercase text-sm tracking-wider">Services</h4>
             <ul className="space-y-4 text-sm text-muted-foreground">
+              {/* NOW POINTING TO /services */}
               <li><Link href="/services" className="hover:text-primary transition-colors flex items-center group"><ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" /> Crane Modernization</Link></li>
               <li><Link href="/services" className="hover:text-primary transition-colors flex items-center group"><ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" /> Structural Engineering</Link></li>
               <li><Link href="/services" className="hover:text-primary transition-colors flex items-center group"><ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" /> Automation Controls</Link></li>
@@ -40,8 +40,8 @@ export default function Footer() {
             <h4 className="font-mono font-bold text-white mb-6 uppercase text-sm tracking-wider">Company</h4>
             <ul className="space-y-4 text-sm text-muted-foreground">
               <li><Link href="/projects" className="hover:text-primary transition-colors">Projects</Link></li>
-              <li><Link href="/contact" className="hover:text-primary transition-colors">About Us</Link></li>
-              <li><Link href="/contact" className="hover:text-primary transition-colors">Careers</Link></li>
+              <li><Link href="/about" className="hover:text-primary transition-colors">About Us</Link></li>
+              <li><Link href="/careers" className="hover:text-primary transition-colors">Careers</Link></li>
               <li><Link href="/contact" className="hover:text-primary transition-colors">Contact</Link></li>
             </ul>
           </div>
