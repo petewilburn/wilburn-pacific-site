@@ -1,6 +1,6 @@
 import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 import { Link, useLocation } from "wouter";
-import LegalFooterLinks from "./LegalFooterLinks"; // <--- Import the new component
+import LegalFooterLinks from "./LegalFooterLinks";
 
 export default function Footer() {
   const [location, setLocation] = useLocation();
@@ -49,7 +49,34 @@ export default function Footer() {
             </div>
           </div>
 
+
           <div>
+            <h4 className="font-mono font-bold text-white mb-6 uppercase text-sm tracking-wider">Services</h4>
+            <ul className="space-y-4 text-sm text-muted-foreground">
+              <li>
+                <button onClick={() => handleServiceClick("automation")} className="hover:text-primary transition-colors text-left">
+                  <ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" /> Crane Modernization
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleServiceClick("engineering")} className="hover:text-primary transition-colors text-left">
+                  <ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" /> Structural Engineering
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleServiceClick("automation")} className="hover:text-primary transition-colors text-left">
+                  <ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" /> Automation Controls
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleServiceClick("rigging")} className="hover:text-primary transition-colors text-left">
+                  <ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" /> Rigging Consulting
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          {/* <div>
             <h4 className="font-mono font-bold text-white mb-6 uppercase text-sm tracking-wider">Services</h4>
             <ul className="space-y-4 text-sm text-muted-foreground">
               <li>
@@ -73,7 +100,7 @@ export default function Footer() {
                 </button>
               </li>
             </ul>
-          </div>
+          </div> */}
 
           <div>
             <h4 className="font-mono font-bold text-white mb-6 uppercase text-sm tracking-wider">Company</h4>

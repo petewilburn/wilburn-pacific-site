@@ -117,6 +117,8 @@ export default function LegalFooterLinks() {
                   </h2>
                 </div>
                 <button
+                  type="button"
+                  title="Close"
                   onClick={() => setActiveModal(null)}
                   className="p-2 hover:bg-white/10 rounded-full transition-colors"
                 >
