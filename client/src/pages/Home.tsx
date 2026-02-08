@@ -69,7 +69,7 @@ export default function Home() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="max-w-3xl">
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
@@ -78,14 +78,13 @@ export default function Home() {
               <span className="text-primary font-mono text-xs font-bold uppercase tracking-widest">
                 Industrial Engineering Excellence
               </span>
-            </motion.div>
+            </motion.div> */}
             
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-5xl md:text-7xl font-mono font-bold text-white mb-6 leading-tight"
-            >
+              className="text-5xl md:text-7xl font-mono font-bold text-white mb-6 leading-tight">
               Engineered <br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400">
                 Lifting Solutions
@@ -161,9 +160,9 @@ export default function Home() {
       {/* NEW CALL TO ACTION (CTA) SECTION */}
       <section className="py-24 bg-card border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-mono font-bold text-white mb-6">
+          {/* <h2 className="text-3xl md:text-4xl font-mono font-bold text-white mb-6">
             Ready to Modernize Your Operations?
-          </h2>
+          </h2> */}
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
             From emergency repairs to full-scale crane retrofits, we bring engineering precision to every lift.
           </p>
