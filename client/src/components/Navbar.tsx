@@ -28,6 +28,7 @@ export default function Navbar() {
             <div className="flex flex-col">
               <span className="font-mono font-bold text-lg leading-none tracking-tighter text-primary">WILBURN</span>
               <span className="font-mono text-xs text-muted-foreground tracking-widest uppercase">PACIFIC</span>
+              <span className="font-mono text-xs text-muted-foreground tracking-widest uppercase">ENGINEERING</span>
             </div>
           </Link>
 
