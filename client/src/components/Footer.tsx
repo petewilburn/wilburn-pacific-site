@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 import { Link, useLocation } from "wouter";
 import LegalFooterLinks from "./LegalFooterLinks";
 
@@ -28,9 +28,9 @@ export default function Footer() {
         {/* ... (Keep the Grid Columns exactly as they were) ... */}
         
         {/* ... Column 1, 2, 3, 4 ... */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-12 mb-16">
             {/* Column 1 */}
-            <div className="col-span-1 md:col-span-1">
+            <div className="col-span-1 lg:col-span-2">
             <Link href="/" className="flex items-center space-x-2 mb-6 group cursor-pointer">
               <img src="/logo.svg" alt="Wilburn Pacific" className="h-6 w-6 object-contain" />
               <span className="font-mono font-bold text-lg text-white">WILBURN PACIFIC</span>
@@ -75,32 +75,6 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-
-          {/* <div>
-            <h4 className="font-mono font-bold text-white mb-6 uppercase text-sm tracking-wider">Services</h4>
-            <ul className="space-y-4 text-sm text-muted-foreground">
-              <li>
-                <button onClick={() => handleServiceClick("automation")} className="hover:text-primary transition-colors flex items-center group text-left">
-                  <ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" /> Crane Modernization
-                </button>
-              </li>
-              <li>
-                <button onClick={() => handleServiceClick("engineering")} className="hover:text-primary transition-colors flex items-center group text-left">
-                  <ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" /> Structural Engineering
-                </button>
-              </li>
-              <li>
-                <button onClick={() => handleServiceClick("automation")} className="hover:text-primary transition-colors flex items-center group text-left">
-                  <ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" /> Automation Controls
-                </button>
-              </li>
-              <li>
-                <button onClick={() => handleServiceClick("rigging")} className="hover:text-primary transition-colors flex items-center group text-left">
-                  <ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" /> Rigging Consulting
-                </button>
-              </li>
-            </ul>
-          </div> */}
 
           <div>
             <h4 className="font-mono font-bold text-white mb-6 uppercase text-sm tracking-wider">Company</h4>
