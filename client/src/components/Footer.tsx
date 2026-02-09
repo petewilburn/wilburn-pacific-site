@@ -106,6 +106,12 @@ export default function Footer() {
             <h4 className="font-mono font-bold text-white mb-6 uppercase text-sm tracking-wider">Contact</h4>
             <ul className="space-y-4 text-sm text-muted-foreground">
               <li className="flex items-start">
+                <Mail className="w-5 h-5 text-primary mr-3 shrink-0" />
+                <button onClick={() => handlePageClick("/contact")} className="hover:text-primary transition-colors text-left">
+                  Contact
+                </button>
+              </li>
+              <li className="flex items-start">
                 <MapPin className="w-5 h-5 text-primary mr-3 shrink-0" />
                 <span>Walla Walla, WA</span>
               </li>
