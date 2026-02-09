@@ -24,7 +24,7 @@ export default function CraneArm() {
   };
 
   return (
-    <div ref={containerRef} className="absolute right-0 top-20 w-[600px] h-[600px] pointer-events-none z-0 hidden xl:block">
+    <div ref={containerRef} className="fixed right-0 top-20 w-[600px] h-[600px] pointer-events-none z-0 hidden xl:block">
       <motion.svg
         viewBox="0 0 500 500"
         className="w-full h-full stroke-slate-500 fill-none stroke-[1]"
