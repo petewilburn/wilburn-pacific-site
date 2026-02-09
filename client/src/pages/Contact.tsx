@@ -40,6 +40,22 @@ export default function Contact() {
     <div className="pt-20 min-h-screen bg-background blueprint-grid">
       {/* Header Section */}
       <section className="bg-card border-b border-white/10 py-16">
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+          <div className="max-w-3xl">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="inline-block mb-4 px-3 py-1 border border-primary/30 bg-primary/10 rounded-sm"
+            >
+              <span className="text-primary font-mono text-xs font-bold uppercase tracking-widest">
+                SITE UNDER CONSTRUCTION
+              </span>
+            </motion.div>
+          </div>
+        </div>
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
             <h1 className="text-4xl md:text-5xl font-mono font-bold text-white mb-6">Contact Us</h1>
