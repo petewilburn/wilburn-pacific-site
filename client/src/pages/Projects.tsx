@@ -45,6 +45,9 @@ export default function Projects() {
             transition={{ duration: 0.5 }}
           >
             <div className="flex items-center space-x-2 text-primary font-mono text-sm uppercase tracking-widest mb-2">
+              <span className="text-primary font-mono text-xs font-bold uppercase tracking-widest">
+                SITE UNDER CONSTRUCTION
+              </span>
               <span className="w-2 h-2 bg-primary block" />
               <span>Portfolio</span>
             </div>

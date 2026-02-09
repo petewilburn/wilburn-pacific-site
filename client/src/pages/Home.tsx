@@ -159,7 +159,7 @@ export default function Home() {
 
       {/* NEW CALL TO ACTION (CTA) SECTION */}
       <section className="py-24 bg-card border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* <h2 className="text-3xl md:text-4xl font-mono font-bold text-white mb-6">
             Ready to Modernize Your Operations?
           </h2> */}
