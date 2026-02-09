@@ -4,14 +4,12 @@ import { useRef } from 'react';
 // Added "export default" explicitly to fix the Import error
 export default function CraneArm() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  });
+  // Track document scroll progress across entire page
+  const { scrollYProgress } = useScroll();
 
-  // Crane mechanics
-  const boomRotation = useTransform(scrollYProgress, [0, 1], [0, -45]);
-  const cableExtension = useTransform(scrollYProgress, [0, 0.5, 1], [0, 100, 50]);
+  // Crane mechanics: animate boom rotation and cable extension based on page scroll
+  const boomRotation = useTransform(scrollYProgress, [0, 0.3, 0.6], [0, -20, -45]);
+  const cableExtension = useTransform(scrollYProgress, [0, 0.5, 0.8], [0, 120, 80]);
 
   const draw = {
     hidden: { pathLength: 0, opacity: 0 },
