@@ -163,7 +163,7 @@ export default function Home() {
           {/* <h2 className="text-3xl md:text-4xl font-mono font-bold text-white mb-6">
             Ready to Modernize Your Operations?
           </h2> */}
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
+          <p className="text-lg text-muted-foreground mb-8 max-w-xl leading-relaxed">
             From emergency repairs to full-scale crane retrofits, we bring engineering precision to every lift.
           </p>
           <Link href="/contact">
