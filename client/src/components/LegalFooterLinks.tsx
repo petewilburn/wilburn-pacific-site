@@ -117,7 +117,9 @@ export default function LegalFooterLinks() {
                   </h2>
                 </div>
                 <button
+                  type="button"
                   onClick={() => setActiveModal(null)}
+                  aria-label="Close modal"
                   className="p-2 hover:bg-white/10 rounded-full transition-colors"
                 >
                   <X className="w-6 h-6 text-white" />
