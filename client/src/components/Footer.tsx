@@ -28,9 +28,9 @@ export default function Footer() {
         {/* ... (Keep the Grid Columns exactly as they were) ... */}
         
         {/* ... Column 1, 2, 3, 4 ... */}
-        <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-12 gap-12 mb-16">
             {/* Column 1 */}
-            <div className="col-span-1 lg:col-span-2">
+            <div className="col-span-1 lg:col-span-5">
             <Link href="/" className="flex items-center space-x-2 mb-6 group cursor-pointer">
               <img src="/logo.svg" alt="Wilburn Pacific" className="h-6 w-6 object-contain" />
               <span className="font-mono font-bold text-lg text-white">WILBURN PACIFIC</span>
@@ -50,7 +50,7 @@ export default function Footer() {
           </div>
 
 
-          <div>
+          <div className="col-span-1 lg:col-span-3">
             <h4 className="font-mono font-bold text-white mb-6 uppercase text-sm tracking-wider">Services</h4>
             <ul className="space-y-4 text-sm text-muted-foreground">
               <li>
@@ -76,7 +76,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div>
+          <div className="col-span-1 lg:col-span-2">
             <h4 className="font-mono font-bold text-white mb-6 uppercase text-sm tracking-wider">Company</h4>
             <ul className="space-y-4 text-sm text-muted-foreground">
               <li>
@@ -102,7 +102,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div>
+          <div className="col-span-1 lg:col-span-2">
             <h4 className="font-mono font-bold text-white mb-6 uppercase text-sm tracking-wider">Contact</h4>
             <ul className="space-y-4 text-sm text-muted-foreground">
               <li className="flex items-start">
