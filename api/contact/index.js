@@ -4,7 +4,6 @@ module.exports = async function (context, req) {
     const connectionString = process.env.ACS_CONNECTION_STRING;
     const senderAddress = process.env.SENDER_ADDRESS;
     
-    // Deconstruct standard fields + new emergency fields
     const { name, email, company, message, isEmergency, emergencyNature, emergencyTimeline } = req.body || {};
 
     if (!name || !email || !message || !connectionString) {
@@ -15,30 +14,32 @@ module.exports = async function (context, req) {
     try {
         const client = new EmailClient(connectionString);
 
-        // LOGIC FOR PROTON MAIL FILTERING:
-        // 1. If Emergency: Subject starts with "URGENT:" -> Set Proton filter to Star + Alarm
-        // 2. If Normal: Subject starts with "New Inquiry:" -> Set Proton filter to Folder "Leads"
-        
-        const subjectLine = isEmergency 
-            ? `URGENT: ${emergencyTimeline || 'Breakdown'} - ${company || name}`
-            : `New Inquiry: ${company || 'General'} - ${name}`;
+        // --- EMAIL ROUTING LOGIC ---
+        // Normal -> info@
+        // Emergency -> emergency@
+        const targetRecipient = isEmergency 
+            ? "emergency@wilburnpacific.com" 
+            : "info@wilburnpacific.com";
 
-        // Build the email body based on urgency
+        const subjectLine = isEmergency 
+            ? `🚨 URGENT: ${emergencyTimeline || 'Breakdown'} - ${company || name}`
+            : `New Consultation Request: ${company || 'General'} - ${name}`;
+
         let emailBody = "";
 
         if (isEmergency) {
             emailBody = `
 ========================================
-🚨 EMERGENCY BREAKDOWN ALERT 🚨
+🚨 EMERGENCY DISPATCH REQUEST 🚨
 ========================================
-STATUS: ${emergencyTimeline?.toUpperCase() || 'URGENT'}
-ISSUE:  ${emergencyNature || 'Not Specified'}
-----------------------------------------
-CONTACT: ${name}
-PHONE:   ${email}  <-- CALL THIS NUMBER
-COMPANY: ${company}
-----------------------------------------
-Additional Notes:
+STATUS:   ${emergencyTimeline?.toUpperCase() || 'URGENT'}
+ISSUE:    ${emergencyNature || 'Not Specified'}
+CONTACT:  ${name}
+PHONE:    ${email}
+COMPANY:  ${company}
+========================================
+
+Description of Problem:
 ${message}
             `;
         } else {
@@ -47,7 +48,7 @@ Name:    ${name}
 Company: ${company}
 Contact: ${email}
 
-Message:
+Project / Inquiry Details:
 ${message}
             `;
         }
@@ -59,7 +60,7 @@ ${message}
                 plainText: emailBody,
             },
             recipients: {
-                to: [{ address: "engineering@wilburnpacific.com" }],
+                to: [{ address: targetRecipient }],
             },
             replyTo: [{ address: email }]
         };

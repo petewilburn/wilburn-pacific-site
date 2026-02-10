@@ -120,12 +120,8 @@ export default function Contact() {
                     <AlertTriangle className="w-5 h-5" />
                   </div>
                   <div className="flex-1">
-                    <h3 className={`font-mono font-bold text-sm ${isEmergency ? "text-red-500" : "text-white"}`}>
-                      This is a Critical Breakdown
-                    </h3>
                     <p className="text-xs text-muted-foreground">
-                      Toggle only if immediate emergency dispatch is required.
-                    </p>
+                      Select to request expedited assistance in the event of a critical breakdown.             </p>
                   </div>
                   <div className={`w-5 h-5 rounded border flex items-center justify-center transition-colors ${isEmergency ? "bg-red-600 border-red-600" : "border-white/20"}`}>
                     {isEmergency && <CheckCircle2 className="w-3 h-3 text-white" />}

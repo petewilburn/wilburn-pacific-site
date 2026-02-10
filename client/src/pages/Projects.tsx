@@ -38,6 +38,7 @@ export default function Projects() {
   return (
     <div className="pt-20 min-h-screen bg-background">
       <section className="bg-card border-b border-white/10 py-16">
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="max-w-3xl">
             <motion.div

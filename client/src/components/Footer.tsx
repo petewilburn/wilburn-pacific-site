@@ -94,11 +94,11 @@ export default function Footer() {
                   Careers
                 </button>
               </li>
-              <li>
+              {/* <li>
                 <button onClick={() => handlePageClick("/contact")} className="hover:text-primary transition-colors text-left">
                   Contact
                 </button>
-              </li>
+              </li> */}
             </ul>
           </div>
 
@@ -108,7 +108,7 @@ export default function Footer() {
               <li className="flex items-start">
                 <Mail className="w-5 h-5 text-primary mr-3 shrink-0" />
                 <button onClick={() => handlePageClick("/contact")} className="hover:text-primary transition-colors text-left">
-                  Contact
+                  Contact Us
                 </button>
               </li>
               <li className="flex items-start">
