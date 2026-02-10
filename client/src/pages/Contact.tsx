@@ -149,13 +149,13 @@ export default function Contact() {
 
                         <div className="space-y-2">
                           <label className="text-xs font-mono uppercase text-red-400 font-bold flex items-center gap-2">
-                            <Clock className="w-3 h-3" /> Required Response
+                            <Clock className="w-3 h-3" /> Requested Response
                           </label>
                           <select 
                             {...register("emergencyTimeline", { required: isEmergency })}
                             className="w-full bg-background border border-red-900/50 p-3 text-white focus:border-red-500 outline-none"
                           >
-                            <option value="Immediate">Immediate (Line Down)</option>
+                            <option value="Immediate">ASAP (Line Down)</option>
                             <option value="Shift Change">Next Shift</option>
                             <option value="24 Hours">Within 24 Hours</option>
                           </select>
