@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { type Project } from "@shared/schema";
+import { type Project } from "@shared/types";
 import { ArrowUpRight, MapPin } from "lucide-react";
 import { Link } from "wouter";
 

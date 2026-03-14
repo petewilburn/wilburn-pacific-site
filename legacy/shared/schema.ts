@@ -2,15 +2,13 @@ import { pgTable, text, serial, timestamp, jsonb } from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
-// === TABLE DEFINITIONS ===
-
 export const services = pgTable("services", {
   id: serial("id").primaryKey(),
   title: text("title").notNull(),
   description: text("description").notNull(),
-  category: text("category").notNull(), // 'design', 'controls', 'structural', 'rigging'
-  features: text("features").array(), // List of specific capabilities or deliverables
-  icon: text("icon").notNull(), // Lucide icon name
+  category: text("category").notNull(),
+  features: text("features").array(),
+  icon: text("icon").notNull(),
 });
 
 export const projects = pgTable("projects", {
@@ -20,7 +18,7 @@ export const projects = pgTable("projects", {
   challenge: text("challenge").notNull(),
   solution: text("solution").notNull(),
   outcome: text("outcome").notNull(),
-  metrics: jsonb("metrics"), // Key-value pairs like "Safety Factor": "1.5x"
+  metrics: jsonb("metrics"),
   imageUrl: text("image_url"),
 });
 
@@ -33,13 +31,9 @@ export const inquiries = pgTable("inquiries", {
   createdAt: timestamp("created_at").defaultNow(),
 });
 
-// === SCHEMAS ===
-
 export const insertServiceSchema = createInsertSchema(services).omit({ id: true });
 export const insertProjectSchema = createInsertSchema(projects).omit({ id: true });
 export const insertInquirySchema = createInsertSchema(inquiries).omit({ id: true, createdAt: true });
-
-// === EXPLICIT API TYPES ===
 
 export type Service = typeof services.$inferSelect;
 export type InsertService = z.infer<typeof insertServiceSchema>;

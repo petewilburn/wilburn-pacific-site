@@ -1,8 +1,7 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { api, buildUrl } from "@shared/routes";
-import type { InsertInquiry } from "@shared/schema";
+import { api, buildUrl } from "../../../shared/routes";
+import type { InsertInquiry } from "../../../shared/schema";
 
-// Services Hooks
 export function useServices() {
   return useQuery({
     queryKey: [api.services.list.path],
@@ -14,7 +13,6 @@ export function useServices() {
   });
 }
 
-// Projects Hooks
 export function useProjects() {
   return useQuery({
     queryKey: [api.projects.list.path],
@@ -39,10 +37,9 @@ export function useProject(id: number) {
   });
 }
 
-// Inquiry Hook
 export function useCreateInquiry() {
   const queryClient = useQueryClient();
-  
+
   return useMutation({
     mutationFn: async (data: InsertInquiry) => {
       const validated = api.inquiries.create.input.parse(data);
@@ -51,7 +48,7 @@ export function useCreateInquiry() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(validated),
       });
-      
+
       if (!res.ok) {
         if (res.status === 400) {
           const error = api.inquiries.create.responses[400].parse(await res.json());

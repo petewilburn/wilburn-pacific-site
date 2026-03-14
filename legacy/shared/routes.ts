@@ -34,7 +34,7 @@ export const api = {
       path: '/api/projects/:id',
       responses: {
         200: z.custom<typeof projects.$inferSelect>(),
-        404: errorSchemas.internal, // Simple not found message
+        404: errorSchemas.internal,
       },
     },
   },
@@ -51,7 +51,6 @@ export const api = {
   },
 };
 
-// Helper for frontend URL building
 export function buildUrl(path: string, params?: Record<string, string | number>): string {
   let url = path;
   if (params) {

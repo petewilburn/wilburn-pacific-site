@@ -1,23 +1,18 @@
-import { 
+import {
   services, projects, inquiries,
   type Service, type InsertService,
   type Project, type InsertProject,
   type Inquiry, type InsertInquiry
-} from "@shared/schema";
+} from "../shared/schema";
 import { db } from "./db";
 import { eq } from "drizzle-orm";
 
 export interface IStorage {
-  // Services
   getServices(): Promise<Service[]>;
   createService(service: InsertService): Promise<Service>;
-  
-  // Projects
   getProjects(): Promise<Project[]>;
   getProject(id: number): Promise<Project | undefined>;
   createProject(project: InsertProject): Promise<Project>;
-
-  // Inquiries
   createInquiry(inquiry: InsertInquiry): Promise<Inquiry>;
 }
 

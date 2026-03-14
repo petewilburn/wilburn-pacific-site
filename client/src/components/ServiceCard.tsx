@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { type Service } from "@shared/schema";
+import { type Service } from "@shared/types";
 import { Cog, Ruler, Anchor, Zap, Box, Construction } from "lucide-react";
 
 const icons: Record<string, any> = {
